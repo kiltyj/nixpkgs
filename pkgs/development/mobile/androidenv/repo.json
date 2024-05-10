@@ -14685,9 +14685,9 @@
           },
           {
             "os": "macosx",
-            "sha1": "27da156d86d02ca82f898ac8adb0bfd7147e3f08",
-            "size": 414289925,
-            "url": "https://dl.google.com/android/repository/emulator-darwin_x64-11672324.zip"
+            "sha1": "b2ffd9f0804cf1ed25dc52f109dd150eedc7daf2",
+            "size": 335181989,
+            "url": "https://dl.google.com/android/repository/emulator-darwin_aarch64-11672324.zip"
           },
           {
             "os": "windows",
