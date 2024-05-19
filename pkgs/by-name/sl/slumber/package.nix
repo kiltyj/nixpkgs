@@ -7,18 +7,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "slumber";
-  version = "1.1.0";
+  version = "1.3.0";
 
-  # This release tarball includes source code for the tree-sitter grammars,
-  # which is not ordinarily part of the repository.
   src = fetchFromGitHub {
     owner = "LucasPickering";
     repo = "slumber";
     rev = "v${version}";
-    hash = "sha256-398XqowI3zEgiU1XolLj3q1m4foC6aGGL+B3Q4plbTw=";
+    hash = "sha256-Qg2Tn0f/5a1tzD7mdPm+d6di1k+o1PKLUjpV7Hv8wpY=";
   };
 
-  cargoHash = "sha256-AK/+1tCdvNucIbxwyqOt/TbOaJPVDOKFEx5NqW2Yd4U=";
+  cargoHash = "sha256-mWKMnE47fl04TvkgB5h3U/Y8TKUcdxDQdIwFiK7kGf4=";
 
   buildInputs = lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.AppKit ];
 

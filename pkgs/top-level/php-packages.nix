@@ -428,10 +428,9 @@ in {
         }
         {
           name = "iconv";
-          configureFlags = [
-            "--with-iconv${lib.optionalString stdenv.isDarwin "=${libiconv}"}"
-          ];
-          doCheck = false;
+          buildInputs = [ libiconv ];
+          configureFlags = [ "--with-iconv" ];
+          doCheck = stdenv.isLinux;
         }
         {
           name = "imap";
@@ -675,7 +674,11 @@ in {
           env.NIX_CFLAGS_COMPILE = toString [ "-I../.." "-DHAVE_DOM" ];
           configureFlags = [ "--with-xsl=${libxslt.dev}" ];
         }
-        { name = "zend_test"; }
+        {
+          name = "zend_test";
+          internalDeps = [ php.extensions.dom ];
+          env.NIX_CFLAGS_COMPILE = "-I${libxml2.dev}/include/libxml2";
+        }
         {
           name = "zip";
           buildInputs = [ libzip pcre2 ];
