@@ -7,11 +7,11 @@
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "swiftlint";
-  version = "0.55.1";
+  version = "0.35.0";
 
   src = fetchurl {
     url = "https://github.com/realm/SwiftLint/releases/download/${version}/portable_swiftlint.zip";
-    hash = "sha256-Tmhw30CJaVQlcYnHjzmwrDpugHgR2/ihHIV8M+O2zwI=";
+    hash = "sha256-Px1YI70IAgt45DNDHxrruhAR5wX5wUs7RGV73QZWhzI=";
   };
 
   dontPatch = true;
